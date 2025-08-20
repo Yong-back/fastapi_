@@ -1,7 +1,6 @@
 from fastapi import FastAPI
 from fastapi.responses import ORJSONResponse
 
-from app.apis.v1 import meeting_router
 from app.apis.v1.meeting_router import edgedb_router as meeting_edgedb_router
 from app.apis.v1.meeting_router import mysql_router as meeting_mysql_router
 
