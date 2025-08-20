@@ -8,17 +8,17 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Check out the codes
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup python environment
         id: setup-python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: "3.13"
 
       - name: Cache Poetry
         id: cache-poetry
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           key: poetry-1.8.5
           path: ~/.local/ # poetry 는 ~/.local 에 설치되므로, 해당 디렉터리를 캐시합니다.
@@ -59,17 +59,17 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Check out the codes
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup python environment
         id: setup-python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: "3.13"
 
       - name: Cache Poetry
         id: cache-poetry
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           key: poetry-1.8.5
           path: ~/.local/
@@ -84,7 +84,7 @@ jobs:
 
       - name: Cache dependencies
         id: cache-venv
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           key: python-${{ steps.setup-python.outputs.python-version }}-poetry-lock-${{ hashFiles('poetry.lock') }}-toml-${{ hashFiles('pyproject.toml') }}-poetry-1.8.5
           path: /home/runner/.cache/pypoetry/virtualenvs/
