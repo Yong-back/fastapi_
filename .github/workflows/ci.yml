@@ -6,12 +6,6 @@ on:
 jobs:
   static-analysis:
     runs-on: ubuntu-22.04
-    env:
-      MYSQL_HOST: 127.0.0.1
-      MYSQL_PORT: 3306
-      MYSQL_USER: root
-      MYSQL_PASSWORD: qorruddyd12#
-      MYSQL_DATABASE: when2meet
     steps:
       - name: Check out the codes
         uses: actions/checkout@v4
@@ -63,6 +57,12 @@ jobs:
 
   test:
     runs-on: ubuntu-22.04
+    env:
+      MYSQL_HOST: 127.0.0.1
+      MYSQL_PORT: 3306
+      MYSQL_USER: root
+      MYSQL_PASSWORD: qorruddyd12#
+      MYSQL_DATABASE: when2meet
     steps:
       - name: Check out the codes
         uses: actions/checkout@v4
