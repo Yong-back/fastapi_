@@ -1,5 +1,6 @@
 import asyncio
 from typing import Any, Generator
+from unittest.mock import Mock, patch
 
 import pytest
 import pytest_asyncio
@@ -31,7 +32,6 @@ def get_test_db_config() -> dict[str, Any]:
 def initialize(request: FixtureRequest) -> Generator[None, None]:
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
-    from unittest.mock import Mock, patch
 
     with patch("tortoise.contrib.test.getDBConfig", Mock(return_value=get_test_db_config())):
         initializer(modules=TORTOISE_APP_MODELS)

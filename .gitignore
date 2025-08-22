@@ -1,3 +1,5 @@
 .idea/
 _pycatch_/
 .coverage
+.qodo
+.dmypt.json
